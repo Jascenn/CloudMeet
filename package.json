@@ -1,0 +1,48 @@
+{
+  "name": "cloudmeet",
+  "version": "1.0.0",
+  "description": "A simple, self-hosted meeting scheduler built on Cloudflare. Open-source Calendly alternative with Google Calendar integration.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run build && wrangler pages dev .svelte-kit/cloudflare",
+    "dev:watch": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "db:init": "wrangler d1 execute cloudmeet --local --file=./schema.sql",
+    "db:init:remote": "wrangler d1 execute cloudmeet --file=./schema.sql",
+    "deploy": "npm run build && wrangler pages deploy .svelte-kit/cloudflare",
+    "prebuild": "node scripts/prebuild.js"
+  },
+  "keywords": [
+    "calendly",
+    "meeting-scheduler",
+    "cloudflare",
+    "svelte",
+    "sveltekit",
+    "google-calendar"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/cloudmeet"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250927.0",
+    "@sveltejs/adapter-cloudflare": "^7.2.3",
+    "@sveltejs/kit": "^2.43.5",
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "svelte": "^5.39.6",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7",
+    "wrangler": "^4.40.2"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18"
+  }
+}

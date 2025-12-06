@@ -1,0 +1,10 @@
+name = "cloudmeet-cron"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[triggers]
+crons = ["*/5 * * * *"]
+
+# These will be set via wrangler secret:
+# wrangler secret put APP_URL
+# wrangler secret put CRON_SECRET

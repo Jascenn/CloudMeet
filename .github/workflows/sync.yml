@@ -1,0 +1,39 @@
+name: Upstream Sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      token:
+        description: 'GitHub token with workflows permission (only needed if sync fails)'
+        required: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ inputs.token || github.token }}
+          fetch-depth: 0
+
+      - name: Sync with upstream
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Add upstream remote
+          git remote add upstream https://github.com/dennisklappe/CloudMeet.git || true
+          git fetch upstream
+
+          # Merge upstream changes, accepting all upstream changes on conflict
+          git merge upstream/main --allow-unrelated-histories -X theirs -m "Sync with upstream CloudMeet" || {
+            echo "Merge conflict detected. Accepting all upstream changes..."
+            git checkout --theirs . || true
+            git add -A
+            git commit -m "Sync with upstream CloudMeet" || true
+          }
+
+          git push
