@@ -1,7 +1,7 @@
 {
   "name": "cloudmeet",
   "version": "1.0.0",
-  "description": "A simple, self-hosted meeting scheduler built on Cloudflare. Open-source Calendly alternative with Google Calendar integration.",
+  "description": "A self-hosted Cloudflare meeting scheduler with Google Calendar and Outlook Calendar integration.",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/cloudmeet"
+    "url": "https://github.com/Jascenn/CloudMeet"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250927.0",
