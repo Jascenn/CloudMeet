@@ -148,6 +148,11 @@ npm run db:init
 npm run dev
 ```
 
+## Contributing
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. Security
+issues should be reported privately according to [SECURITY.md](SECURITY.md).
+
 ## License
 
-MIT
+This project is available under the [MIT License](LICENSE).
