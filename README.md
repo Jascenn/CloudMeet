@@ -2,6 +2,10 @@
 
 A simple, self-hosted meeting scheduler built on Cloudflare. Open-source Calendly alternative with Google Calendar and Outlook Calendar integration.
 
+> This repository is an upstream template copy maintained for reference and
+> local evaluation. It is not an original or production-owned Lingyi project.
+> Upstream: <https://github.com/dennisklappe/CloudMeet>.
+
 ![CloudMeet Booking Page](static/screenshot.png)
 
 **[Live Demo](https://meet.klappe.dev/cloudmeet)**
