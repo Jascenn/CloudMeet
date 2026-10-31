@@ -16,7 +16,7 @@ jobs:
       changes: ${{ steps.sync.outputs.changes }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           token: ${{ inputs.token || github.token }}
           fetch-depth: 0
@@ -57,7 +57,7 @@ jobs:
       deployments: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: main
 
